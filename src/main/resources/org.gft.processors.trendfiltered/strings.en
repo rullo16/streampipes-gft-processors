@@ -1,0 +1,20 @@
+org.gft.processors.trendfiltered.title=TrendFiltered
+org.gft.processors.trendfiltered.description=Trend processor with filter
+
+input.title = Input value to observe
+input.description = Specify value to be monitored
+
+increase.title=Percentage of Increase/Decrease
+increase.description = Specifies the percentage of increase or decrease within time specified window
+
+duration.title = Time Window Length(Seconds)
+duration.description =Specify the size of the time window in seconds.
+
+operation.title = Increase/Decrease
+operation.description = Specifies type of operation the processor needs to perform
+
+fOperation.title = Filter Operation
+fOperation.description = Filter Operation to perform on input
+
+threshold.title = Threshold
+threshold.description = Threshold value to apply to filtering
