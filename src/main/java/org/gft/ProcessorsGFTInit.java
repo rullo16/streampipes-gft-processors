@@ -30,6 +30,7 @@ import org.apache.streampipes.messaging.kafka.SpKafkaProtocolFactory;
 import org.apache.streampipes.messaging.mqtt.SpMqttProtocolFactory;
 
 import org.gft.processors.interpolation.InterpolationDataProcessor;
+import org.gft.processors.loessinterpolation.LoessInterpolationDataProcessor;
 import org.gft.processors.trendfiltered.TrendFilteredController;
 
 public class ProcessorsGFTInit extends ExtensionsModelSubmitter {
@@ -45,7 +46,8 @@ public class ProcessorsGFTInit extends ExtensionsModelSubmitter {
                     "", 8090)
             .registerPipelineElements(
                     new InterpolationDataProcessor(),
-                    new TrendFilteredController())
+                    new TrendFilteredController(),
+                    new LoessInterpolationDataProcessor())
             .registerMessagingFormats(
                     new JsonDataFormatFactory(),
                     new CborDataFormatFactory(),

@@ -107,6 +107,8 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="org/gft/processors/interpolation/InterpolationDataProcessor.html#declareModel()">declareModel()</a></span> - Method in class org.gft.processors.interpolation.<a href="org/gft/processors/interpolation/InterpolationDataProcessor.html" title="class in org.gft.processors.interpolation">InterpolationDataProcessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#declareModel()">declareModel()</a></span> - Method in class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/trendfiltered/TrendFilteredController.html#declareModel()">declareModel()</a></span> - Method in class org.gft.processors.trendfiltered.<a href="org/gft/processors/trendfiltered/TrendFilteredController.html" title="class in org.gft.processors.trendfiltered">TrendFilteredController</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/trendfiltered/TrendOperator.html#DECREASE">DECREASE</a></span> - org.gft.processors.trendfiltered.<a href="org/gft/processors/trendfiltered/TrendOperator.html" title="enum in org.gft.processors.trendfiltered">TrendOperator</a></dt>
@@ -163,6 +165,12 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/interpolation/InterpolationDataProcessor.html#loessInterp(double%5B%5D,double%5B%5D,double)">loessInterp(double[], double[], double)</a></span> - Method in class org.gft.processors.interpolation.<a href="org/gft/processors/interpolation/InterpolationDataProcessor.html" title="class in org.gft.processors.interpolation">InterpolationDataProcessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#loessInterp(double%5B%5D,double%5B%5D,double)">loessInterp(double[], double[], double)</a></span> - Method in class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation"><span class="typeNameLink">LoessInterpolationDataProcessor</span></a> - Class in <a href="org/gft/processors/loessinterpolation/package-summary.html">org.gft.processors.loessinterpolation</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#%3Cinit%3E()">LoessInterpolationDataProcessor()</a></span> - Constructor for class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
 </dl>
 <a id="I:M">
 <!--   -->
@@ -189,15 +197,23 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <dl>
 <dt><span class="memberNameLink"><a href="org/gft/processors/interpolation/InterpolationDataProcessor.html#onDetach()">onDetach()</a></span> - Method in class org.gft.processors.interpolation.<a href="org/gft/processors/interpolation/InterpolationDataProcessor.html" title="class in org.gft.processors.interpolation">InterpolationDataProcessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#onDetach()">onDetach()</a></span> - Method in class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/interpolation/InterpolationDataProcessor.html#onEvent(org.apache.streampipes.model.runtime.Event,org.apache.streampipes.wrapper.routing.SpOutputCollector)">onEvent(Event, SpOutputCollector)</a></span> - Method in class org.gft.processors.interpolation.<a href="org/gft/processors/interpolation/InterpolationDataProcessor.html" title="class in org.gft.processors.interpolation">InterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#onEvent(org.apache.streampipes.model.runtime.Event,org.apache.streampipes.wrapper.routing.SpOutputCollector)">onEvent(Event, SpOutputCollector)</a></span> - Method in class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/trendfiltered/TrendFilteredController.html#onInvocation(org.apache.streampipes.model.graph.DataProcessorInvocation,org.apache.streampipes.sdk.extractor.ProcessingElementParameterExtractor)">onInvocation(DataProcessorInvocation, ProcessingElementParameterExtractor)</a></span> - Method in class org.gft.processors.trendfiltered.<a href="org/gft/processors/trendfiltered/TrendFilteredController.html" title="class in org.gft.processors.trendfiltered">TrendFilteredController</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/gft/processors/interpolation/InterpolationDataProcessor.html#onInvocation(org.apache.streampipes.wrapper.standalone.ProcessorParams,org.apache.streampipes.wrapper.routing.SpOutputCollector,org.apache.streampipes.wrapper.context.EventProcessorRuntimeContext)">onInvocation(ProcessorParams, SpOutputCollector, EventProcessorRuntimeContext)</a></span> - Method in class org.gft.processors.interpolation.<a href="org/gft/processors/interpolation/InterpolationDataProcessor.html" title="class in org.gft.processors.interpolation">InterpolationDataProcessor</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html#onInvocation(org.apache.streampipes.wrapper.standalone.ProcessorParams,org.apache.streampipes.wrapper.routing.SpOutputCollector,org.apache.streampipes.wrapper.context.EventProcessorRuntimeContext)">onInvocation(ProcessorParams, SpOutputCollector, EventProcessorRuntimeContext)</a></span> - Method in class org.gft.processors.loessinterpolation.<a href="org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.html" title="class in org.gft.processors.loessinterpolation">LoessInterpolationDataProcessor</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="org/gft/package-summary.html">org.gft</a> - package org.gft</dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/gft/processors/interpolation/package-summary.html">org.gft.processors.interpolation</a> - package org.gft.processors.interpolation</dt>
+<dd>&nbsp;</dd>
+<dt><a href="org/gft/processors/loessinterpolation/package-summary.html">org.gft.processors.loessinterpolation</a> - package org.gft.processors.loessinterpolation</dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/gft/processors/trendfiltered/package-summary.html">org.gft.processors.trendfiltered</a> - package org.gft.processors.trendfiltered</dt>
 <dd>&nbsp;</dd>

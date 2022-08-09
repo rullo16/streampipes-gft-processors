@@ -91,8 +91,6 @@ public class TrendFilteredController extends StandaloneEventProcessingDeclarer<T
       filterOperation = RelationalOperator.LESSER_THAN;
     } else if (stringFilterOperation.equals(">=")) {
       filterOperation = RelationalOperator.GREATER_EQUALS;
-    //} else if (stringFilterOperation.equals("==")) {
-      //filterOperation = RelationalOperator.EQUALS;
     } else if (stringFilterOperation.equals("!=")) {
       filterOperation = RelationalOperator.NOT_EQUALS;
     }

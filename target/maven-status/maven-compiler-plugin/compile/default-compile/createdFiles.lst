@@ -4,3 +4,4 @@ org/gft/processors/trendfiltered/TrendFilteredParams.class
 org/gft/processors/trendfiltered/Trend.class
 org/gft/processors/trendfiltered/TrendFilteredController.class
 org/gft/ProcessorsGFTInit.class
+org/gft/processors/loessinterpolation/LoessInterpolationDataProcessor.class

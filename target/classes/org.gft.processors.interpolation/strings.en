@@ -1,5 +1,5 @@
-org.gft.pe.interpolation.title=Interpolation
-org.gft.pe.interpolation.description=Calculates the linear interpolation of a monitored value over a certain time interval if greater than a threshold value.
+org.gft.processors.interpolation.title=Interpolation
+org.gft.processors.interpolation.description=Calculates the linear interpolation of a monitored value over a certain time interval if greater than a threshold value.
 
 value.title=Input value to observe
 value.description=Specify value to be monitored

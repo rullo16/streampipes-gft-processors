@@ -16,7 +16,7 @@
   ~
   -->
 
-## Example
+## TrendFiltered
 
 <p align="center"> 
     <img src="icon.png" width="150px;" class="pe-image-documentation"/>
@@ -25,17 +25,35 @@
 ***
 
 ## Description
-Describe your new data processor here!
+It detects the increase of a numeric field previously filtered according to a certain threshold, in a customizable time window.
+Example: A temperature value, filtered to only obtain values greater than 7, increases by 10 percent within 5 minutes.
 
 ***
 
 ## Required input
-What are the input requirements of your data processor?
+There should be a numeric field in the event, which should be filtered according to a certain threshold, and then observe the trend.
 
 ***
 
 ## Configuration
-What are the configurations a user has to provide?
+###Value to Observe
+Specifies the value field that should be monitored.
+
+###Operation
+Specifies the filter operation that should be applied on the field.
+
+###Threshold value
+Specifies the threshold value.
+
+###Increase/Decrease
+Specifies the type of operation the processor should perform.
+
+###Percentage of Increase/Decrease
+Specifies the increase in percent (e.g., 100 indicates an increase by 100 percent within the specified time window).
+
+###Time Window Length (Seconds)
+Specifies the size of the time window in seconds.
+
 
 ## Output
-How do the events your data processor emits look like?
+Outputs the events if there is a trend observed according to the configuration defined.

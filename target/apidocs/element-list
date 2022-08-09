@@ -1,3 +1,4 @@
 org.gft
 org.gft.processors.interpolation
+org.gft.processors.loessinterpolation
 org.gft.processors.trendfiltered
