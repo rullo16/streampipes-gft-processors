@@ -75,8 +75,6 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
             .requiredSingleValueSelection(Labels.withId(INTERPOLATION_OPERATION), Options.from("Linear",
                      "Spline", "Cubic", "Neville"))
 
-//"Loess"  *rimosso temporaneamente perchè da rivedere */
-
             .requiredFloatParameter(Labels.withId(THRESHOLD))
 
             .outputStrategy(OutputStrategies.append(PrimitivePropertyBuilder.create(Datatypes.Double, "chosen_timestamp").build()
@@ -117,10 +115,6 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
     //two-position array interpolation
     if ((this.interpolation_operation.equals("Linear")) || (this.interpolation_operation.equals("Neville"))) {
 
-      System.out.println("two-position array interpolation ");
-      //System.out.println("timestamp: " + timestamp );
-      //System.out.println("arrayY[0]: " + arrayY[0] );
-
       //if we are in the first event it sets the [0] values of the two arrays with the data arriving from SP
       if ((arrayY[0] == 0.0 && arrayX[0] == 0.0)) {
 
@@ -130,7 +124,6 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         //if the new timestamp is equal than the timestamp previously or the difference is more low to the threshold,
         //do not perform an interpolation
       } else if ((arrayX[0] == timestamp) || (timestamp - arrayX[0] < this.threshold)) {
-        System.out.println("--------- Timestamp Values not accepted ------- ");
 
         //perform an interpolation
       } else {
@@ -141,18 +134,13 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         BigDecimal bd = new BigDecimal((arrayX[0] + arrayX[1]) / 2).setScale(2, RoundingMode.HALF_UP);
         xi = bd.doubleValue();
 
-        System.out.println("arrayX: " + Arrays.toString(arrayX));
-        System.out.println("arrayY: " + Arrays.toString(arrayY));
-
         switch (this.interpolation_operation) {
           case "Linear":
             //perform a linear interpolation
-            System.out.println("this.interpolation_operation " + this.interpolation_operation);
             yi = linearInterp(arrayX, arrayY, xi);
             break;
           case "Neville":
-            //perform a Loess interpolation
-            System.out.println("this.interpolation_operation " + this.interpolation_operation);
+            //perform a Neville interpolation
             yi = nevilleInterp(arrayX, arrayY, xi);
             break;
         }
