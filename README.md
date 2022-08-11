@@ -93,11 +93,11 @@ To integrate the project download it and place it under the streampipes-extensio
    
 4. Go to the streampipes-extensions-all-jvm folder and run
    ```sh
-   docker build -t YOUR_DOCKER_REGISTRY/DOCKER_IMAGE_CUSTOM_NAME
+   docker build -t YOUR_DOCKER_REGISTRY/DOCKER_IMAGE_CUSTOM_NAME .
    ```
    Default:
    ```sh
-   docker build -t YOUR_DOCKER_REGISTRY/streampipes-gft-extensions
+   docker build -t YOUR_DOCKER_REGISTRY/streampipes-gft-extensions .
    ```
 5. Push your Docker image to the registry
    ```sh
