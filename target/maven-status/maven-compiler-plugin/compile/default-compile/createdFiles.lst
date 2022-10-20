@@ -1,3 +1,4 @@
+org/gft/processors/timetracking/TimeTrackingDataProcessor.class
 org/gft/processors/interpolation/InterpolationDataProcessor.class
 org/gft/processors/trendfiltered/TrendOperator.class
 org/gft/processors/trendfiltered/TrendFilteredParams.class

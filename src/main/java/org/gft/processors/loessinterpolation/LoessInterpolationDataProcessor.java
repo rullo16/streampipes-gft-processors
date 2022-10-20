@@ -83,8 +83,8 @@ public class LoessInterpolationDataProcessor extends StreamPipesDataProcessor {
 
   @Override
   public void onInvocation(ProcessorParams processorParams,
-                            SpOutputCollector out,
-                            EventProcessorRuntimeContext ctx) throws SpRuntimeException  {
+                           SpOutputCollector out,
+                           EventProcessorRuntimeContext ctx) throws SpRuntimeException  {
 
     this.input_value = processorParams.extractor().mappingPropertyValue(INPUT_VALUE);
     this.timestamp_value = processorParams.extractor().mappingPropertyValue(TIMESTAMP_VALUE);

@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.gft"},{"l":"org.gft.processors.interpolation"},{"l":"org.gft.processors.loessinterpolation"},{"l":"org.gft.processors.trendfiltered"}]
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"org.gft"},{"l":"org.gft.processors.interpolation"},{"l":"org.gft.processors.loessinterpolation"},{"l":"org.gft.processors.timetracking"},{"l":"org.gft.processors.trendfiltered"}]

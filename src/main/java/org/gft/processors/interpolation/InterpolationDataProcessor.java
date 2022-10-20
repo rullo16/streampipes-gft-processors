@@ -41,6 +41,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Arrays;
 
+
+
 public class InterpolationDataProcessor extends StreamPipesDataProcessor {
 
   private String input_value;
@@ -73,7 +75,9 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
                             Labels.withId(TIMESTAMP_VALUE), PropertyScope.NONE)
                     .build())
             .requiredSingleValueSelection(Labels.withId(INTERPOLATION_OPERATION), Options.from("Linear",
-                     "Spline", "Cubic", "Neville"))
+                    "Spline", "Cubic", "Neville"))
+
+//"Loess"  *rimosso temporaneamente perchè da rivedere */
 
             .requiredFloatParameter(Labels.withId(THRESHOLD))
 
@@ -85,8 +89,8 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
 
   @Override
   public void onInvocation(ProcessorParams processorParams,
-                            SpOutputCollector out,
-                            EventProcessorRuntimeContext ctx) throws SpRuntimeException  {
+                           SpOutputCollector out,
+                           EventProcessorRuntimeContext ctx) throws SpRuntimeException  {
 
     this.input_value = processorParams.extractor().mappingPropertyValue(INPUT_VALUE);
     this.timestamp_value = processorParams.extractor().mappingPropertyValue(TIMESTAMP_VALUE);
@@ -115,6 +119,10 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
     //two-position array interpolation
     if ((this.interpolation_operation.equals("Linear")) || (this.interpolation_operation.equals("Neville"))) {
 
+      System.out.println("two-position array interpolation ");
+      //System.out.println("timestamp: " + timestamp );
+      //System.out.println("arrayY[0]: " + arrayY[0] );
+
       //if we are in the first event it sets the [0] values of the two arrays with the data arriving from SP
       if ((arrayY[0] == 0.0 && arrayX[0] == 0.0)) {
 
@@ -124,6 +132,7 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         //if the new timestamp is equal than the timestamp previously or the difference is more low to the threshold,
         //do not perform an interpolation
       } else if ((arrayX[0] == timestamp) || (timestamp - arrayX[0] < this.threshold)) {
+        System.out.println("--------- Timestamp Values not accepted ------- ");
 
         //perform an interpolation
       } else {
@@ -134,13 +143,18 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         BigDecimal bd = new BigDecimal((arrayX[0] + arrayX[1]) / 2).setScale(2, RoundingMode.HALF_UP);
         xi = bd.doubleValue();
 
+        System.out.println("arrayX: " + Arrays.toString(arrayX));
+        System.out.println("arrayY: " + Arrays.toString(arrayY));
+
         switch (this.interpolation_operation) {
           case "Linear":
             //perform a linear interpolation
+            System.out.println("this.interpolation_operation " + this.interpolation_operation);
             yi = linearInterp(arrayX, arrayY, xi);
             break;
           case "Neville":
-            //perform a Neville interpolation
+            //perform a Loess interpolation
+            System.out.println("this.interpolation_operation " + this.interpolation_operation);
             yi = nevilleInterp(arrayX, arrayY, xi);
             break;
         }
@@ -156,7 +170,7 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         out.collect(event);
       }
 
-    //three-position array interpolation
+      //three-position array interpolation
     }else if ((this.interpolation_operation.equals("Loess")) || (this.interpolation_operation.equals("Spline")) || (this.interpolation_operation.equals("Cubic"))){
 
 
@@ -168,7 +182,7 @@ public class InterpolationDataProcessor extends StreamPipesDataProcessor {
         array3X[0] = timestamp;
         array3Y[0] = value;
 
-      //if we are in the second event it sets the [1] values of the two arrays with the data arriving from SP
+        //if we are in the second event it sets the [1] values of the two arrays with the data arriving from SP
       }else if ((array3Y[1] == 0.0 && array3X[1] == 0.0)) {
 
         array3X[1] = timestamp;
