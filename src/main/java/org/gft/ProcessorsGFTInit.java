@@ -49,7 +49,7 @@ public class ProcessorsGFTInit extends ExtensionsModelSubmitter {
                     new InterpolationDataProcessor(),
                     new TrendFilteredController(),
                     new LoessInterpolationDataProcessor(),
-                    new TimeTrackingDataProcessor())
+                    new PowerTrackingProcessor())
             .registerMessagingFormats(
                     new JsonDataFormatFactory(),
                     new CborDataFormatFactory(),

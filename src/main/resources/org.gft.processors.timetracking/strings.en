@@ -1,8 +1,0 @@
-org.gft.processors.timetracking.title=TimeTracking
-org.gft.processors.timetracking.description=Description of data processor
-
-value.title=Input value for the time tracking
-value.description=Specify how many values to use for the time tracking
-
-timestamp_value.title=Timestamp
-timestamp_value.description=Timestamp value
